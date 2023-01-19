@@ -1,9 +1,8 @@
-const { WebClient } = require('@slack/web-api');
+import { WebClient } from '@slack/web-api';
 const slackToken = process.env.SLACK_TOKEN;
 
 const web = new WebClient(slackToken);
 
-// eslint-disable-next-line import/prefer-default-export
 export const handler = async (event) => {
   console.log(event)
   if (event.body) {
