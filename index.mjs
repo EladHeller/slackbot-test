@@ -8,6 +8,7 @@ export const handler = async (event) => {
   if (event.body) {
     const urlEncoded = Buffer.from(event.body, 'base64').toString();
     const params = new URLSearchParams(urlEncoded);
+    console.log(params)
     const text = params.get('text');
     if (text && text.match(/^(why|למה)/i)) {
       return {
@@ -20,7 +21,7 @@ export const handler = async (event) => {
     }
     if (text && text.match(/^(open)/i)) {
       await web.views.open({
-        trigger_id: event.trigger_id,
+        trigger_id: params.get('trigger_id'),
         view: {
           type: 'modal',
           callback_id: 'view_1',
