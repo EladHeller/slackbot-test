@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "zip": "zip -r slackbot.zip ."
+    "zip": "rm -f slackbot.zip && zip -r slackbot.zip ."
   },
   "keywords": [],
   "author": "",
